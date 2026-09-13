@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saurabh Bapu Virkar | Frontend Developer & Engineering Student</title>
+  
+  <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+
+  <!-- Ambient Glow Background Blobs -->
+  <div class="blob-glow blob-1"></div>
+  <div class="blob-glow blob-2"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar-wrapper">
+    <nav class="navbar">
+      <a href="#" class="logo">
+        <span class="logo-badge">&lt;SV /&gt;</span>
+        <span class="logo-text">Saurabh</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-item">About</a></li>
+        <li><a href="#skills" class="nav-item">Skills</a></li>
+        <li><a href="#projects" class="nav-item">Projects</a></li>
+        <li><a href="#education" class="nav-item">Education</a></li>
+        <li><a href="#contact" class="nav-item">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Print / PDF Resume Trigger -->
+        <button class="btn-action btn-print" onclick="window.print()" title="Print / Download ATS Resume">
+          <i class="fa-solid fa-file-arrow-down"></i>
+          <span>CV / Resume</span>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle Dark/Light Mode">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Open Navigation">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Status Pill -->
+          <div class="status-pill">
+            <span class="pulse-dot"></span>
+            <span>Open to Internships &amp; Projects</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Saurabh Bapu Virkar</span>
+          </h1>
+
+          <h2 class="hero-subtitle">
+            I build <span class="typing-role" id="typing"></span>
+          </h2>
+
+          <p class="hero-desc">
+            2nd Year Engineering Student at <strong>University of Mumbai</strong>. Passionate about engineering high-performance web experiences, intuitive interfaces, and anime-inspired creative design.
+          </p>
+
+          <!-- Hero Actions -->
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <span>View Projects</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <button onclick="window.print()" class="btn btn-secondary">
+              <i class="fa-solid fa-download"></i>
+              <span>Download CV</span>
+            </button>
+          </div>
+
+          <!-- Social Quick Links -->
+          <div class="social-strip">
+            <span class="social-label">Find me on:</span>
+            <a href="https://github.com/Nesvv" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub - @Nesvv">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="mailto:saurabh@example.com" class="social-icon" title="Email Me">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Avatar & Decorative Card -->
+        <div class="hero-visual">
+          <div class="avatar-card">
+            <div class="avatar-halo"></div>
+            <div class="avatar-frame">
+              <img src="avatar.jpg" alt="Saurabh Virkar (Luffy Avatar)" class="avatar-img" />
+            </div>
+            <!-- Floating Badges -->
+            <div class="floating-badge badge-top">
+              <i class="fa-brands fa-html5 text-orange"></i>
+              <span>HTML5 &amp; CSS3</span>
+            </div>
+            <div class="floating-badge badge-bottom">
+              <i class="fa-brands fa-js text-yellow"></i>
+              <span>JavaScript ES6+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Bar -->
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <span class="metric-number">2nd</span>
+            <span class="metric-label">Year Engg @ Mumbai Univ</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-number">10+</span>
+            <span class="metric-label">Web Repositories &amp; UIs</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-number">100%</span>
+            <span class="metric-label">Dedication &amp; Curiosity</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// 01. ABOUT ME</span>
+          <h2 class="section-title">Engineering Meets Creativity</h2>
+        </div>
+
+        <div class="about-grid reveal">
+          <div class="about-card glass-card">
+            <div class="about-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Passionate Developer</h3>
+            <p>
+              I specialize in frontend web technologies, crafting responsive, fast, and accessible digital experiences from scratch with clean, semantic code.
+            </p>
+          </div>
+
+          <div class="about-card glass-card">
+            <div class="about-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3>Computer Engineering</h3>
+            <p>
+              Pursuing my Bachelor's at Mumbai University, sharpening my foundations in Data Structures, Object-Oriented Design, and Software Engineering.
+            </p>
+          </div>
+
+          <div class="about-card glass-card">
+            <div class="about-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <h3>Creative &amp; Anime Culture</h3>
+            <p>
+              Deeply inspired by anime aesthetics, interactive storytelling, and modern UI micro-interactions that make websites unforgettable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// 02. MY ARSENAL</span>
+          <h2 class="section-title">Technical Skills &amp; Stack</h2>
+        </div>
+
+        <div class="skills-wrapper reveal">
+          <!-- Category 1: Frontend -->
+          <div class="skill-category glass-card">
+            <div class="category-header">
+              <i class="fa-solid fa-laptop-code"></i>
+              <h3>Frontend Development</h3>
+            </div>
+            <div class="skills-pill-group">
+              <span class="skill-pill"><i class="fa-brands fa-html5"></i> HTML5 (Semantic)</span>
+              <span class="skill-pill"><i class="fa-brands fa-css3-alt"></i> CSS3 &amp; Flexbox/Grid</span>
+              <span class="skill-pill"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</span>
+              <span class="skill-pill"><i class="fa-solid fa-mobile-screen"></i> Responsive Web Design</span>
+              <span class="skill-pill"><i class="fa-solid fa-fire"></i> CSS Animations &amp; Effects</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Tools & Workflow -->
+          <div class="skill-category glass-card">
+            <div class="category-header">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+              <h3>Tools &amp; Workflow</h3>
+            </div>
+            <div class="skills-pill-group">
+              <span class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git Version Control</span>
+              <span class="skill-pill"><i class="fa-brands fa-github"></i> GitHub &amp; Pages</span>
+              <span class="skill-pill"><i class="fa-solid fa-credit-card"></i> Razorpay Payment SDK</span>
+              <span class="skill-pill"><i class="fa-solid fa-code"></i> VS Code</span>
+              <span class="skill-pill"><i class="fa-solid fa-paper-plane"></i> EmailJS API</span>
+              <span class="skill-pill"><i class="fa-solid fa-palette"></i> UI/UX Prototyping</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Fundamentals -->
+          <div class="skill-category glass-card">
+            <div class="category-header">
+              <i class="fa-solid fa-brain"></i>
+              <h3>Core Fundamentals</h3>
+            </div>
+            <div class="skills-pill-group">
+              <span class="skill-pill"><i class="fa-solid fa-cubes"></i> Data Structures</span>
+              <span class="skill-pill"><i class="fa-solid fa-diagram-project"></i> OOP Principles</span>
+              <span class="skill-pill"><i class="fa-solid fa-gauge-high"></i> Web Performance</span>
+              <span class="skill-pill"><i class="fa-solid fa-bug"></i> Debugging &amp; Problem Solving</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// 03. FEATURED WORK</span>
+          <h2 class="section-title">Projects I've Built</h2>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Featured Project 1: OtakuVault E-Commerce -->
+          <div class="project-card glass-card reveal">
+            <div class="project-banner">
+              <div class="project-mockup">
+                <i class="fa-solid fa-bag-shopping project-badge-icon"></i>
+                <div class="project-meta-tag">Commercial E-Commerce</div>
+              </div>
+            </div>
+            
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tech-tag">JavaScript ES6+</span>
+                <span class="tech-tag">Razorpay SDK</span>
+                <span class="tech-tag">State Persistence</span>
+                <span class="tech-tag">HTML5 / CSS3</span>
+              </div>
+
+              <h3 class="project-title">OtakuVault — E-Commerce with Razorpay</h3>
+              <p class="project-desc">
+                A full-stack anime merchandise &amp; apparel store featuring client-side state persistence, debounced multi-category catalog search, slide-over cart drawer, and official Razorpay payment gateway integration.
+              </p>
+
+              <ul class="project-bullets">
+                <li><i class="fa-solid fa-circle-check"></i> Integrated Razorpay Checkout SDK supporting UPI, Cards, NetBanking &amp; COD.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Persistent cart with localStorage, dynamic coupon engine &amp; automated order invoices.</li>
+              </ul>
+
+              <div class="project-links">
+                <a href="../ecommerce-store/index.html" target="_blank" class="btn btn-sm btn-primary">
+                  <span>Live Store Demo</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://github.com/Nesvv" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">
+                  <i class="fa-brands fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Project 2: Interactive Portfolio & CV -->
+          <div class="project-card glass-card reveal">
+            <div class="project-banner project-banner-alt">
+              <div class="project-mockup">
+                <i class="fa-solid fa-id-card project-badge-icon"></i>
+                <div class="project-meta-tag">Live System</div>
+              </div>
+            </div>
+            
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tech-tag">Modern CSS</span>
+                <span class="tech-tag">EmailJS</span>
+                <span class="tech-tag">Print Engine</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+
+              <h3 class="project-title">Developer Portfolio &amp; Smart CV</h3>
+              <p class="project-desc">
+                A dual-mode developer platform featuring a Gen-Z cyber-aura dark interface for web browsers, and an automated ATS-friendly printable CV generator.
+              </p>
+
+              <ul class="project-bullets">
+                <li><i class="fa-solid fa-circle-check"></i> Instant theme switching with local storage persistence.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Integrated EmailJS messaging with asynchronous form validation.</li>
+              </ul>
+
+              <div class="project-links">
+                <a href="#home" class="btn btn-sm btn-primary">
+                  <span>Current View</span>
+                  <i class="fa-solid fa-check"></i>
+                </a>
+                <a href="https://github.com/Nesvv" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">
+                  <i class="fa-brands fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="section education-section" id="education">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// 04. ACADEMICS</span>
+          <h2 class="section-title">Education &amp; Journey</h2>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="timeline-item glass-card">
+            <div class="timeline-bullet"></div>
+            <div class="timeline-header">
+              <div>
+                <h3 class="degree-title">Bachelor of Engineering (B.E.)</h3>
+                <h4 class="institute-title">University of Mumbai</h4>
+              </div>
+              <span class="timeline-badge">2024 – 2028 (Expected)</span>
+            </div>
+            <p class="timeline-desc">
+              Currently in <strong>Second Year (SE)</strong>. Focusing on computer science foundations, algorithm design, database fundamentals, and hands-on web application development.
+            </p>
+            <div class="coursework-tags">
+              <span class="badge-mini">Data Structures</span>
+              <span class="badge-mini">Object Oriented Programming</span>
+              <span class="badge-mini">Web Technologies</span>
+              <span class="badge-mini">Computer Networks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// 05. GET IN TOUCH</span>
+          <h2 class="section-title">Let's Connect &amp; Build</h2>
+        </div>
+
+        <div class="contact-grid reveal">
+          <!-- Left info card -->
+          <div class="contact-info-card glass-card">
+            <h3>Have an opportunity or project?</h3>
+            <p>
+              I am actively seeking internship opportunities, freelance web projects, and open-source collaborations. Feel free to shoot me a message!
+            </p>
+
+            <div class="contact-channels">
+              <div class="channel-item">
+                <div class="channel-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <span class="channel-label">Location</span>
+                  <span class="channel-val">Mumbai, Maharashtra, India</span>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <div class="channel-icon"><i class="fa-brands fa-github"></i></div>
+                <div>
+                  <span class="channel-label">GitHub</span>
+                  <a href="https://github.com/Nesvv" target="_blank" class="channel-val link">github.com/Nesvv</a>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <div class="channel-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <span class="channel-label">Email Direct</span>
+                  <span class="channel-val">Available via form or GitHub</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right form card -->
+          <div class="contact-form-card glass-card">
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-user input-icon"></i>
+                  <input type="text" id="name" name="name" placeholder="John Doe" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-envelope input-icon"></i>
+                  <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-comment-dots input-icon textarea-icon"></i>
+                  <textarea id="message" name="message" rows="4" placeholder="Tell me about your project or opportunity..." required></textarea>
+                </div>
+              </div>
+
+              <button type="submit" id="submitBtn" class="btn btn-primary btn-block">
+                <span id="btnText">Send Message</span>
+                <i class="fa-solid fa-paper-plane" id="btnIcon"></i>
+              </button>
+
+              <div id="formStatus" class="form-status"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Saurabh Bapu Virkar. Built with HTML5, Modern CSS &amp; JavaScript.</p>
+      <div class="footer-links">
+        <a href="https://github.com/Nesvv" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+        <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================== -->
+  <!-- ATS PRINT-ONLY CV TEMPLATE (Visible on window.print) -->
+  <!-- ============================================== -->
+  <div class="print-only-resume">
+    <div class="print-resume-header">
+      <h1>SAURABH BAPU VIRKAR</h1>
+      <p class="print-role">Frontend Web Developer | Engineering Student</p>
+      <p class="print-contact">
+        Mumbai, Maharashtra, India &bull; GitHub: github.com/Nesvv &bull; Portfolio: nesvv.github.io
+      </p>
+    </div>
+
+    <div class="print-resume-section">
+      <h2>PROFESSIONAL SUMMARY</h2>
+      <p>
+        Motivated Second Year Engineering student at the University of Mumbai with strong foundations in Frontend Development (HTML5, CSS3, JavaScript ES6+), responsive design, and modern UI engineering. Proven ability to build dynamic, interactive web applications with clean, maintainable code.
+      </p>
+    </div>
+
+    <div class="print-resume-section">
+      <h2>TECHNICAL SKILLS</h2>
+      <ul class="print-skills-list">
+        <li><strong>Languages &amp; Web:</strong> HTML5, CSS3, JavaScript (ES6+), Modern Responsive Layouts (Flexbox &amp; Grid)</li>
+        <li><strong>Tools &amp; Platforms:</strong> Git, GitHub, Razorpay Payment SDK, VS Code, EmailJS API</li>
+        <li><strong>Core Competencies:</strong> Data Structures, OOP, Web Performance, UI/UX Design, Debugging</li>
+      </ul>
+    </div>
+
+    <div class="print-resume-section">
+      <h2>KEY PROJECTS</h2>
+      <div class="print-project-item">
+        <div class="print-project-heading">
+          <strong>OtakuVault — E-Commerce Web Platform with Razorpay Gateway</strong>
+          <span class="print-date">Live: github.com/Nesvv</span>
+        </div>
+        <p class="print-tech">Technologies: HTML5, CSS3, JavaScript ES6+, Razorpay Checkout SDK, LocalStorage API</p>
+        <ul class="print-bullets">
+          <li>Architected a responsive anime e-commerce store with debounced catalog search, category filtering, and persistent cart state.</li>
+          <li>Integrated official Razorpay Checkout SDK to handle real-time UPI, Card, and NetBanking transactions with instant invoice generation.</li>
+          <li>Engineered a custom promotional coupon engine (discount calculation) and interactive variant quick-view drawer.</li>
+        </ul>
+      </div>
+
+      <div class="print-project-item">
+        <div class="print-project-heading">
+          <strong>Interactive Developer Portfolio &amp; Printable CV</strong>
+          <span class="print-date">Live: github.com/Nesvv</span>
+        </div>
+        <p class="print-tech">Technologies: Modern CSS, JavaScript, EmailJS, Responsive Design</p>
+        <ul class="print-bullets">
+          <li>Developed a modern cyber-aesthetic portfolio with light/dark theming and async EmailJS messaging.</li>
+          <li>Integrated automated print styling converting web profile to an ATS-ready PDF format.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="print-resume-section">
+      <h2>EDUCATION</h2>
+      <div class="print-edu-item">
+        <div class="print-project-heading">
+          <strong>Bachelor of Engineering (B.E.)</strong>
+          <span class="print-date">2024 – 2028 (Expected)</span>
+        </div>
+        <p>University of Mumbai — Currently in Second Year (SE)</p>
+        <p class="print-sub">Relevant Coursework: Data Structures, Object-Oriented Programming, Web Technologies</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
